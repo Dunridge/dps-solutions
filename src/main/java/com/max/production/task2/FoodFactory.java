@@ -11,19 +11,17 @@ public class FoodFactory implements IFoodFactory {
     
     public FoodFactory(String foodType) {
         this.food = this.getFood(foodType);
-        System.out.println("The factory returned " + this.food.getType());
+        System.out.println("The factory returned class " + this.food.getType());
         System.out.println(this.food.getMessage());
     }
 
     @Override
     public IFood getFood(String type) {
 
-        if(type.equals(FoodType.Pizza.toString())) {
-            System.out.println("The factory returned class Cake");
+        if(type.equals(FoodType.Pizza.toString().toLowerCase())) {
             return new Pizza();
+        } else {
+            return new Cake();
         }
-
-        // else return cake
-        return new Cake();
     }
 }
