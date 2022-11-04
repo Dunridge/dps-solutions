@@ -4,6 +4,7 @@ import com.max.production.task3.interfaces.ITree;
 
 // implements the rooted tree
 public class Tree implements ITree {
+    public int nNodes = 0;
     TreeNode[] nodes;
     // TODO: add edges here
     //  (there's no class so the implementation will be here)
@@ -11,7 +12,7 @@ public class Tree implements ITree {
     // TODO: learn the value inside of the node
     // Returns the value stored in the node.
     @Override
-    public String getValue(TreeNode node) {
+    public int getValue(TreeNode node) {
 
         return node.value;
     }

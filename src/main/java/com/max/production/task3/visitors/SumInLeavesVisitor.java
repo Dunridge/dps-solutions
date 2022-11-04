@@ -5,6 +5,7 @@ import com.max.production.task3.entities.TreeVis;
 import com.max.production.task3.entities.TreeNode;
 
 public class SumInLeavesVisitor extends TreeVis {
+
     public int getResult() {
         //implement this
         return 0;

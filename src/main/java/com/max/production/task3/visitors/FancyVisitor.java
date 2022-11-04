@@ -4,7 +4,7 @@ import com.max.production.task3.entities.TreeLeaf;
 import com.max.production.task3.entities.TreeNode;
 import com.max.production.task3.entities.TreeVis;
 
-class FancyVisitor extends TreeVis {
+public class FancyVisitor extends TreeVis {
     public int getResult() {
         //implement this
         return 0;
