@@ -9,6 +9,8 @@ import com.max.production.task3.visitors.SumInLeavesVisitor;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Scanner;
 
 public class VisitorSolution {
@@ -54,21 +56,20 @@ public class VisitorSolution {
             sc.useDelimiter("\\Z");
             content = sc.next();
             String[] inputs = content.split("\\r?\\n");
-            // TODO: put the entered values into models
             int nNodes = Integer.parseInt(inputs[0]);
-            System.out.println("inputs[0]: " + nNodes);
             int[] nodesValues = Arrays.stream(inputs[1].split(" ")).mapToInt(Integer::parseInt).toArray();
-            System.out.println("inputs[1]: ");
             Arrays.stream(nodesValues).forEach(System.out::println);
-//            int[] nodesValues = inputs[1]
+            int[] nodesColorCodes = Arrays.stream(inputs[2].split(" ")).mapToInt(Integer::parseInt).toArray(); // leave unchanged
+            LinkedList<String> edges = new LinkedList<String>();
+            for (int i = 3; i < inputs.length; i++) {
+                edges.push(inputs[i]);
+            }
 
-//            Tree tree = new Tree(nNodes, nodesValues, );
+            Tree tree = new Tree(nNodes, nodesValues, nodesColorCodes, edges.toArray(new String[0]));
+
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-
-
-
 
         // TODO: output according to the conditions
         SumInLeavesVisitor obj1 = new SumInLeavesVisitor();
