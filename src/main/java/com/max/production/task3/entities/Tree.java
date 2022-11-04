@@ -9,6 +9,13 @@ public class Tree implements ITree {
     // TODO: add edges here
     //  (there's no class so the implementation will be here)
 
+    public Tree(int nNodes,
+                int[] nodesValues,
+                int[] nodesColors,
+                String[] edges) {
+
+    }
+
     // TODO: learn the value inside of the node
     // Returns the value stored in the node.
     @Override

@@ -8,6 +8,7 @@ import com.max.production.task3.visitors.SumInLeavesVisitor;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class VisitorSolution {
@@ -40,21 +41,36 @@ public class VisitorSolution {
 
     public static void run() {
         System.out.println("LR3 entered");
+        VisitorSolution.solve();
+    }
 
-        // TODO: read the conditions from the txt file
+    // TODO: ditch the requirements altogether and do it here + send the teacher this lab
+    public static TreeNode solve() {
         File file = new File("C:\\Users\\MAX\\IdeaProjects\\dps-solutions\\src\\main\\java\\com\\max\\production\\task3\\input\\input.txt");
+        String content;
 
         try {
             Scanner sc = new Scanner(file);
-//            sc.useDelimiter("\n");
             sc.useDelimiter("\\Z");
-            System.out.println(sc.next());
+            content = sc.next();
+            String inputs[] = content.split("\\r?\\n");
+            // TODO: design a system to put these into models
+            //            System.out.println(content);
+            //            Arrays.stream(inputs).forEach(input -> {
+            //                System.out.println(input);
+            //            });
+            // TODO: put the entered values into models
+            int nNodes = Integer.parseInt(inputs[0]);
+            System.out.println("inputs[0]: " + nNodes);
+//            int nNodes = inputs[0];
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
 
 
-        // output according to the conditions
+
+
+        // TODO: output according to the conditions
         SumInLeavesVisitor obj1 = new SumInLeavesVisitor();
         obj1.getResult();
 
@@ -64,11 +80,9 @@ public class VisitorSolution {
         FancyVisitor obj3 = new FancyVisitor();
         obj3.getResult();
 
-    }
 
-    public static TreeNode solve() {
         // TODO: read the input to create the tree
-        Tree tree = new Tree();
+//        Tree tree = new Tree();
         // TODO: read the tree from STDIN and return its root as a return value of this function
         TreeNode treeRootNode = new TreeNode(1, 1); // replace later on
 
