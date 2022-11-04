@@ -57,9 +57,12 @@ public class VisitorSolution {
             // TODO: put the entered values into models
             int nNodes = Integer.parseInt(inputs[0]);
             System.out.println("inputs[0]: " + nNodes);
-            // TODO: split the text by space
-            System.out.println("inputs[1]: " + inputs[1].split(" "));
+            int[] nodesValues = Arrays.stream(inputs[1].split(" ")).mapToInt(Integer::parseInt).toArray();
+            System.out.println("inputs[1]: ");
+            Arrays.stream(nodesValues).forEach(System.out::println);
 //            int[] nodesValues = inputs[1]
+
+//            Tree tree = new Tree(nNodes, nodesValues, );
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
