@@ -53,16 +53,13 @@ public class VisitorSolution {
             Scanner sc = new Scanner(file);
             sc.useDelimiter("\\Z");
             content = sc.next();
-            String inputs[] = content.split("\\r?\\n");
-            // TODO: design a system to put these into models
-            //            System.out.println(content);
-            //            Arrays.stream(inputs).forEach(input -> {
-            //                System.out.println(input);
-            //            });
+            String[] inputs = content.split("\\r?\\n");
             // TODO: put the entered values into models
             int nNodes = Integer.parseInt(inputs[0]);
             System.out.println("inputs[0]: " + nNodes);
-//            int nNodes = inputs[0];
+            // TODO: split the text by space
+            System.out.println("inputs[1]: " + inputs[1].split(" "));
+//            int[] nodesValues = inputs[1]
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
