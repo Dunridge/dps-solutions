@@ -1,11 +1,12 @@
 package com.max.production.task3.visitors;
 
+import com.max.production.task3.entities.Tree;
 import com.max.production.task3.entities.TreeLeaf;
 import com.max.production.task3.entities.TreeNode;
 import com.max.production.task3.entities.TreeVis;
 
 public class FancyVisitor extends TreeVis {
-    public int getResult() {
+    public int getResult(Tree tree) {
         //implement this
         return 0;
     }

@@ -17,9 +17,6 @@ public class VisitorSolution {
     //  In this problem you must NOT generate any output on your own.
 
     /*
-
-    // TODO: make the input as a txt file and submit this to your teacher in person
-
     Input:
     5 // number of nodes in the tree
     4 7 2 5 12 // each node contains a certain number as its value
@@ -38,12 +35,12 @@ public class VisitorSolution {
     24
     40
     15
-
     */
 
     public static void run() {
         System.out.println("LR3 entered");
-        VisitorSolution.solve();
+        TreeNode treeNode = VisitorSolution.solve();
+        System.out.println(treeNode.value);
     }
 
     // TODO: ditch the requirements altogether and do it here + send the teacher this lab
@@ -67,23 +64,20 @@ public class VisitorSolution {
 
             Tree tree = new Tree(nNodes, nodesValues, nodesColorCodes, edges.toArray(new String[0]));
 
+            // TODO: pass the tree to the functions
+            SumInLeavesVisitor obj1 = new SumInLeavesVisitor();
+            obj1.getResult(tree);
+
+            ProductOfRedNodesVisitor obj2 = new ProductOfRedNodesVisitor();
+            obj2.getResult(tree);
+
+            FancyVisitor obj3 = new FancyVisitor();
+            obj3.getResult(tree);
+
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
 
-        // TODO: output according to the conditions
-        SumInLeavesVisitor obj1 = new SumInLeavesVisitor();
-        obj1.getResult();
-
-        ProductOfRedNodesVisitor obj2 = new ProductOfRedNodesVisitor();
-        obj2.getResult();
-
-        FancyVisitor obj3 = new FancyVisitor();
-        obj3.getResult();
-
-
-        // TODO: read the input to create the tree
-//        Tree tree = new Tree();
         // TODO: read the tree from STDIN and return its root as a return value of this function
         TreeNode treeRootNode = new TreeNode(1, 1); // replace later on
 

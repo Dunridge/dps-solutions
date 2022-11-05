@@ -7,6 +7,8 @@ public class TreeNode implements ITreeNode {
     public int value = 0;
     public int colorInt = 0;
     public String color = null;
+    public boolean isLeaf = false;
+    public boolean isVisited = false;
 
     public int depth = 0;
 
