@@ -64,7 +64,7 @@ public class VisitorSolution {
 
             Tree tree = new Tree(nNodes, nodesValues, nodesColorCodes, edges.toArray(new String[0]));
 
-            // TODO: pass the tree to the functions
+            // TODO: configure the output to fit the task
             SumInLeavesVisitor obj1 = new SumInLeavesVisitor();
             obj1.getResult(tree);
 

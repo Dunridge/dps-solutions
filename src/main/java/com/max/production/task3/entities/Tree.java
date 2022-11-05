@@ -6,8 +6,8 @@ import java.util.Arrays;
 
 // Tasks
 // task 1 (~)
-// task 2 (...)
-// task 3
+// task 2 (~)
+// task 3 (...)
 
 
 // implements the rooted tree
@@ -84,9 +84,37 @@ public class Tree implements ITree {
         return node.color;
     }
 
+    // TODO: implement this method
+    // getDepth(): Returns the depth of the node.
+    // Recall that the depth of a node is the number
+    // of edges between the node and the tree's root,
+    // so the tree's root has depth 0 and each descendant
+    // node's depth is equal to the depth of its parent
+    // node +1.
     @Override
     public int getDepth(TreeNode node) {
-        //  depth of a node is the number of edges between the node and the tree's root
+        // tree's root is always the vertex with number 1
+        //  depth of a node is the number of edges
+        //  between the node and the tree's root
+
+        int rootVertexNumber = 1;
+        int distanceInEdges = 0;
+        int currentNodeNumber = node.vertexNumber;
+        // TODO: go backwards from the current node
+        //  and find the edges that contain the current
+        //  node
+        //
+
+        System.out.println("getting depth: ");
+        for (int i = 0; i < this.nodes.length; i++) {
+            for (int j = 0; j < this.edges.length; j++) {
+                if(edges[j].contains(Integer.toString(currentNodeNumber))) {
+                    System.out.println(edges[j]);
+                    // TODO: after this filter out those that don't have leaves
+                }
+            }
+        }
+
         return node.depth;
     }
 }

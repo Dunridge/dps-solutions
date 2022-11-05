@@ -18,7 +18,7 @@ public class FancyVisitor extends TreeVis {
         // the example calculation in the problem is incorrect
         int sumInNonLeafNodes = Arrays.stream(tree.nodes)
                 .filter(node -> !node.isLeaf)
-                .filter(node -> node.depth % 2 == 0) // TODO: add the logic for depth variable initialization
+                .filter(node -> tree.getDepth(node) % 2 == 0) // TODO: add the logic for depth variable initialization
                 .mapToInt(node -> node.value)
                 .sum();
 
