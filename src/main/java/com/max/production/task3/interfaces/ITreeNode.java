@@ -7,4 +7,6 @@ public interface ITreeNode {
     public String color = null;
     public boolean isLeaf = false;
     public boolean isVisited = false;
+
+    public int vertexNumber = 0;
 }

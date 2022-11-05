@@ -79,7 +79,7 @@ public class VisitorSolution {
         }
 
         // TODO: read the tree from STDIN and return its root as a return value of this function
-        TreeNode treeRootNode = new TreeNode(1, 1); // replace later on
+        TreeNode treeRootNode = new TreeNode(1, 1, 1); // replace later on
 
         return treeRootNode;
     }
