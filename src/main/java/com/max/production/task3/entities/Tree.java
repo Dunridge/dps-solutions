@@ -8,6 +8,12 @@ import java.util.Arrays;
 public class Tree implements ITree {
     public int nNodes = 0;
     TreeNode[] nodes;
+
+    // TODO: these will go into nodes
+    int[] nodesValues;
+    int[] nodesColorCodes;
+
+    String[] edges;
     // TODO: add edges here
     //  (there's no class so the implementation will be here)
 
@@ -23,10 +29,25 @@ public class Tree implements ITree {
         Arrays.stream(nodesColorCodes).forEach(System.out::println);
         System.out.println("edges");
         Arrays.stream(edges).forEach(System.out::println);
+
+        this.nNodes = nNodes;
+        this.nodes = new TreeNode[this.nNodes];
+
+        System.out.println("The nodes after construction: ");
+        for (int i = 0; i < nNodes; i++) {
+            this.nodes[i] = new TreeNode(nodesValues[i], nodesColorCodes[i]);
+        }
+//        System.out.println(this.getValue(this.nodes[0]));
+
+
+        // TODO: find the leaves of the tree here (and make an upcast)
+
+
+        // TODO: work on the edges
+
+
     }
 
-    // TODO: learn the value inside of the node
-    // Returns the value stored in the node.
     @Override
     public int getValue(TreeNode node) {
 

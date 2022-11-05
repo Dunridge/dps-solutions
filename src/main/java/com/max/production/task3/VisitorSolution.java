@@ -40,7 +40,7 @@ public class VisitorSolution {
     public static void run() {
         System.out.println("LR3 entered");
         TreeNode treeNode = VisitorSolution.solve();
-        System.out.println(treeNode.value);
+//        System.out.println(treeNode.value);
     }
 
     // TODO: ditch the requirements altogether and do it here + send the teacher this lab

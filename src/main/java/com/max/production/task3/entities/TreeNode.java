@@ -13,6 +13,8 @@ public class TreeNode implements ITreeNode {
     public int depth = 0;
 
     public TreeNode(int value, int colorInt) {
+        this.value = value;
+        this.colorInt = colorInt; // TODO: consider adding a string for this
         // TODO: consider creating edges
     }
 }
