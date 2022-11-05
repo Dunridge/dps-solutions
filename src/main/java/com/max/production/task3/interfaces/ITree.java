@@ -12,4 +12,5 @@ public interface ITree {
     public int getValue(TreeNode node);
     public String getColor(TreeNode node);
     public int getDepth(TreeNode node);
+    public void findLeaves();
 }

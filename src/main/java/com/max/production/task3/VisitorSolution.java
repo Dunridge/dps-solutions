@@ -55,7 +55,7 @@ public class VisitorSolution {
             String[] inputs = content.split("\\r?\\n");
             int nNodes = Integer.parseInt(inputs[0]);
             int[] nodesValues = Arrays.stream(inputs[1].split(" ")).mapToInt(Integer::parseInt).toArray();
-            Arrays.stream(nodesValues).forEach(System.out::println);
+//            Arrays.stream(nodesValues).forEach(System.out::println);
             int[] nodesColorCodes = Arrays.stream(inputs[2].split(" ")).mapToInt(Integer::parseInt).toArray(); // leave unchanged
             LinkedList<String> edges = new LinkedList<String>();
             for (int i = 3; i < inputs.length; i++) {
