@@ -5,18 +5,25 @@ import com.max.production.task3.entities.TreeLeaf;
 import com.max.production.task3.entities.TreeVis;
 import com.max.production.task3.entities.TreeNode;
 
+import java.util.Arrays;
+
 public class SumInLeavesVisitor extends TreeVis {
-    Tree tree;
 
     public int getResult(Tree tree) {
-        this.tree = tree;
+        int sumOfLeaves = Arrays.stream(tree.nodes)
+                .filter(node -> node.isLeaf)
+                .mapToInt(node -> node.value)
+                .sum();
         //implement this
 
         // returns the sum of the leaves in the tree, which is 7 + 5 + 12 = 24
+
+        System.out.println("sumOfLeaves: " + sumOfLeaves);
+
         // TODO: add the logic where you'll upcast nodes to leaves
         // TODO: think whether you have to create edges class for the leaves
 
-        return 0;
+        return sumOfLeaves;
     }
 
     public void visitNode(TreeNode node) {

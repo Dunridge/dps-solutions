@@ -4,11 +4,17 @@ import com.max.production.task3.interfaces.ITree;
 
 import java.util.Arrays;
 
+// Tasks
+// task 1 (~)
+// task 2 (...)
+// task 3
+
+
 // implements the rooted tree
 public class Tree implements ITree {
     public int nNodes = 0;
-    TreeNode[] nodes;
-    String[] edges;
+    public TreeNode[] nodes;
+    public String[] edges;
 
     public Tree(int nNodes,
                 int[] nodesValues,
