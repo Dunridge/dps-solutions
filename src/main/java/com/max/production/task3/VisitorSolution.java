@@ -40,10 +40,8 @@ public class VisitorSolution {
     public static void run() {
         System.out.println("LR3 entered");
         TreeNode treeNode = VisitorSolution.solve();
-//        System.out.println(treeNode.value);
     }
 
-    // TODO: ditch the requirements altogether and do it here + send the teacher this lab
     public static TreeNode solve() {
         File file = new File("C:\\Users\\MAX\\IdeaProjects\\dps-solutions\\src\\main\\java\\com\\max\\production\\task3\\input\\input.txt");
         String content;
@@ -55,7 +53,6 @@ public class VisitorSolution {
             String[] inputs = content.split("\\r?\\n");
             int nNodes = Integer.parseInt(inputs[0]);
             int[] nodesValues = Arrays.stream(inputs[1].split(" ")).mapToInt(Integer::parseInt).toArray();
-//            Arrays.stream(nodesValues).forEach(System.out::println);
             int[] nodesColorCodes = Arrays.stream(inputs[2].split(" ")).mapToInt(Integer::parseInt).toArray(); // leave unchanged
             LinkedList<String> edges = new LinkedList<String>();
             for (int i = 3; i < inputs.length; i++) {
@@ -64,15 +61,15 @@ public class VisitorSolution {
 
             Tree tree = new Tree(nNodes, nodesValues, nodesColorCodes, edges.toArray(new String[0]));
 
-            // TODO: configure the output to fit the task
             SumInLeavesVisitor obj1 = new SumInLeavesVisitor();
-            obj1.getResult(tree);
+            System.out.println("SumInLeavesVisitor: " + obj1.getResult(tree));
 
             ProductOfRedNodesVisitor obj2 = new ProductOfRedNodesVisitor();
-            obj2.getResult(tree);
+            System.out.println("ProductOfRedNodesVisitor: " + obj2.getResult(tree));
 
             FancyVisitor obj3 = new FancyVisitor();
-            obj3.getResult(tree);
+            System.out.println("FancyVisitor: " + obj3.getResult(tree));
+
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();

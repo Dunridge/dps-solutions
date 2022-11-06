@@ -9,16 +9,11 @@ import java.util.Arrays;
 
 public class FancyVisitor extends TreeVis {
 
-    // Creates a FancyVisitor object whose getResult method returns the absolute difference
-    // between the sum of the values of non-leaf nodes at even depth and the sum of the values
-    // of green leaf nodes, which is |4 - (7 + 12)| = 15. The locked stub code prints the
-    // returned value on a new line.
-
     public int getResult(Tree tree) {
         // the example calculation in the problem is incorrect
         int sumInNonLeafNodes = Arrays.stream(tree.nodes)
                 .filter(node -> !node.isLeaf)
-                .filter(node -> tree.getDepth(node) % 2 == 0) // TODO: add the logic for depth variable initialization
+                .filter(node -> tree.getDepth(node) % 2 == 0) // possible optimization: add the logic for depth variable initialization
                 .mapToInt(node -> node.value)
                 .sum();
 
@@ -33,17 +28,13 @@ public class FancyVisitor extends TreeVis {
         // sum of the values of non-leaf nodes at even depth
         // the sum of the values of green leaf nodes
         // |4 - (7 + 12)| = 15
-        // implement this
-        System.out.println("FancyVisitor: " + res);
 
         return res;
     }
 
     public void visitNode(TreeNode node) {
-        //implement this
     }
 
     public void visitLeaf(TreeLeaf leaf) {
-        //implement this
     }
 }
