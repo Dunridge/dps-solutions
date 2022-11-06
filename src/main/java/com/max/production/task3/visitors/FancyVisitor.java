@@ -34,7 +34,7 @@ public class FancyVisitor extends TreeVis {
         // the sum of the values of green leaf nodes
         // |4 - (7 + 12)| = 15
         // implement this
-        System.out.println("fancy sum " + res);
+        System.out.println("FancyVisitor: " + res);
 
         return res;
     }

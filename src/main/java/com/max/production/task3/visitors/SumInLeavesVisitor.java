@@ -18,7 +18,7 @@ public class SumInLeavesVisitor extends TreeVis {
 
         // returns the sum of the leaves in the tree, which is 7 + 5 + 12 = 24
 
-        System.out.println("sumOfLeaves: " + sumOfLeaves);
+        System.out.println("SumInLeavesVisitor: " + sumOfLeaves);
 
         // TODO: add the logic where you'll upcast nodes to leaves
         // TODO: think whether you have to create edges class for the leaves

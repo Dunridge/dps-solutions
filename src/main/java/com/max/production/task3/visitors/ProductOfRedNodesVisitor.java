@@ -22,7 +22,7 @@ public class ProductOfRedNodesVisitor extends TreeVis {
             }
         }
 
-        System.out.println("product " + product);
+        System.out.println("ProductOfRedNodesVisitor: " + product);
 
         //implement this
         return product;

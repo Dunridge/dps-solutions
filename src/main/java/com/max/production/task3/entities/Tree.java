@@ -22,13 +22,6 @@ public class Tree implements ITree {
                 int[] nodesValues,
                 int[] nodesColorCodes, // TODO: create a enum to map these colors to the values
                 String[] edges) {
-        System.out.println("Entered tree");
-//        System.out.println(nNodes);
-//        Arrays.stream(nodesValues).forEach(System.out::println);
-//        Arrays.stream(nodesColorCodes).forEach(System.out::println);
-//        System.out.println("edges");
-//        Arrays.stream(edges).forEach(System.out::println);
-
         this.nNodes = nNodes;
         this.nodes = new TreeNode[this.nNodes];
         this.edges = edges;
@@ -39,13 +32,12 @@ public class Tree implements ITree {
 
         this.findLeaves();
 
-        System.out.println("leaves");
-        Arrays.stream(this.nodes).forEach(node -> {
-            if (node.isLeaf) {
-                System.out.println(node.vertexNumber);
-            }
-        });
-
+//        System.out.println("leaves");
+//        Arrays.stream(this.nodes).forEach(node -> {
+//            if (node.isLeaf) {
+//                System.out.println(node.vertexNumber);
+//            }
+//        });
     }
 
     // TODO: find out whether Java has the feature of any and add it here
@@ -106,13 +98,10 @@ public class Tree implements ITree {
                 String currentEdge = this.edges[j];
 
                 if (currentEdge.contains(Integer.toString(currentlyProcessedVertex))) {
-                    System.out.println(currentEdge);
                     int[] edgeNumbers = Arrays.stream(currentEdge.split(" ")).mapToInt(Integer::parseInt).toArray();
-                    System.out.println("edgeNs: " + edgeNumbers[0] + edgeNumbers[1]);
                     distanceInEdges++;
                     final int currentVertexN = currentlyProcessedVertex;
                     currentlyProcessedVertex = Arrays.stream(edgeNumbers).filter(n -> n != currentVertexN).toArray()[0];
-                    System.out.println("vertex on the other end: " + currentlyProcessedVertex);
                 }
             }
 
