@@ -3,6 +3,8 @@ package com.max.production.task3.entities;
 import com.max.production.task3.interfaces.ITree;
 
 import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.Set;
 
 // Tasks
 // task 1 (~)
@@ -84,36 +86,42 @@ public class Tree implements ITree {
         return node.color;
     }
 
-    // TODO: implement this method
     // getDepth(): Returns the depth of the node.
     // Recall that the depth of a node is the number
     // of edges between the node and the tree's root,
     // so the tree's root has depth 0 and each descendant
     // node's depth is equal to the depth of its parent
     // node +1.
+    // TODO: run this for every node in constructor
     @Override
     public int getDepth(TreeNode node) {
-        // tree's root is always the vertex with number 1
-        //  depth of a node is the number of edges
-        //  between the node and the tree's root
-
         int rootVertexNumber = 1;
         int distanceInEdges = 0;
-        int currentNodeNumber = node.vertexNumber;
-        // TODO: go backwards from the current node
-        //  and find the edges that contain the current
-        //  node
-        //
+        boolean rootReached = false;
+        int currentlyProcessedVertex = node.vertexNumber;
 
-        System.out.println("getting depth: ");
-        for (int i = 0; i < this.nodes.length; i++) {
+        while(!rootReached) {
+
             for (int j = 0; j < this.edges.length; j++) {
-                if(edges[j].contains(Integer.toString(currentNodeNumber))) {
-                    System.out.println(edges[j]);
-                    // TODO: after this filter out those that don't have leaves
+                String currentEdge = this.edges[j];
+
+                if (currentEdge.contains(Integer.toString(currentlyProcessedVertex))) {
+                    System.out.println(currentEdge);
+                    int[] edgeNumbers = Arrays.stream(currentEdge.split(" ")).mapToInt(Integer::parseInt).toArray();
+                    System.out.println("edgeNs: " + edgeNumbers[0] + edgeNumbers[1]);
+                    distanceInEdges++;
+                    final int currentVertexN = currentlyProcessedVertex;
+                    currentlyProcessedVertex = Arrays.stream(edgeNumbers).filter(n -> n != currentVertexN).toArray()[0];
+                    System.out.println("vertex on the other end: " + currentlyProcessedVertex);
                 }
             }
+
+            if (currentlyProcessedVertex == rootVertexNumber) {
+                rootReached = true;
+            }
         }
+
+        node.depth = distanceInEdges;
 
         return node.depth;
     }
